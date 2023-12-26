@@ -1,5 +1,40 @@
+import controller.LectureController;
+import view.LectureView;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner in = new Scanner(System.in);
+        LectureController lectureController = new LectureController();
+        LectureView lectureView = new LectureView(in, lectureController);
+
+        while (true) {
+            System.out.println("[1]강의 등록 [2]강의 목록 [3]강의 수정 [4]강의 삭제 [5]강의명 검색 [0]종료");
+            int select = in.nextInt();
+            in.nextLine();
+
+            switch (select) {
+                case 1:
+                    lectureView.createLecture();
+                    break;
+                case 2:
+                    lectureView.listAllLectures();
+                    break;
+                case 3:
+                    lectureView.updateLecture();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 0:
+                    System.out.println("프로그램을 종료합니다.");
+                    in.close();
+                    return;
+                default:
+                    System.out.println("다시 입력해 주세요.");
+            }
+        }
     }
 }
