@@ -48,7 +48,7 @@ public class LectureView {
 
     public void updateLecture() {
         listAllLectures();
-        System.out.print("수정할 강의의 번호를 선택해 주세요: ");
+        System.out.print("수정할 강의 번호를 선택해 주세요: ");
         int id = in.nextInt();
         in.nextLine();
         while (!lectureController.isIndexExist(id)) {
@@ -69,5 +69,21 @@ public class LectureView {
 
         lectureController.updateLecture(id, newTitle, newLecturer, newTag, newStars);
         System.out.println("======= 수정 완료 =======\n");
+    }
+
+    public void deleteLecture() {
+        listAllLectures();
+        System.out.print("삭제할 강의 번호를 선택해 주세요: ");
+        int id = in.nextInt();
+        in.nextLine();
+        while (!lectureController.isIndexExist(id)) {
+            System.out.println("잘못된 번호입니다. 다시 입력해 주세요!");
+            System.out.print("번호: ");
+            id = in.nextInt();
+            in.nextLine();
+        }
+
+        lectureController.deleteLecture(id);
+        System.out.println("======= 삭제 완료 =======\n");
     }
 }

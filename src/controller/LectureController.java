@@ -30,4 +30,8 @@ public class LectureController {
         if (!tag.isEmpty()) lectures.get(id-1).setTag(tag);
         lectures.get(id-1).setStars(stars);
     }
+
+    public void deleteLecture(int id) {
+        lectures.remove(id-1);
+    }
 }

@@ -25,6 +25,7 @@ public class Main {
                     lectureView.updateLecture();
                     break;
                 case 4:
+                    lectureView.deleteLecture();
                     break;
                 case 5:
                     break;
