@@ -16,6 +16,7 @@ public class LectureView {
         this.lectureController = lectureController;
     }
 
+    // 강의 생성
     public void createLecture() {
         System.out.println("======= 강의 등록 =======");
         System.out.print("강의 제목: ");
@@ -37,6 +38,7 @@ public class LectureView {
         System.out.println("======= 강의 등록 완료 =======\n");
     }
 
+    // 전체 강의 읽어오기
     public void listAllLectures() {
         ArrayList<Lecture> lectures = lectureController.listAllLectures();
 
@@ -47,6 +49,7 @@ public class LectureView {
         System.out.println("======================\n");
     }
 
+    // 강의 정보 업데이트
     public void updateLecture() {
         listAllLectures();
         System.out.print("수정할 강의 번호를 선택해 주세요: ");
@@ -72,6 +75,7 @@ public class LectureView {
         System.out.println("======= 수정 완료 =======\n");
     }
 
+    // 강의 삭제
     public void deleteLecture() {
         listAllLectures();
         System.out.print("삭제할 강의 번호를 선택해 주세요: ");
@@ -88,6 +92,7 @@ public class LectureView {
         System.out.println("======= 삭제 완료 =======\n");
     }
 
+    // 강의명으로 검색
     public void searchLectures() {
         System.out.print("검색할 강의명을 입력해 주세요: ");
         String title = in.nextLine();
