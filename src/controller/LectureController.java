@@ -3,6 +3,7 @@ package controller;
 import model.Lecture;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LectureController {
     private final ArrayList<Lecture> lectures = new ArrayList<>();
@@ -33,5 +34,9 @@ public class LectureController {
 
     public void deleteLecture(int id) {
         lectures.remove(id-1);
+    }
+
+    public List<Lecture> searchLectures(String title) {
+        return lectures.stream().filter(lecture -> lecture.getTitle().contains(title)).toList();
     }
 }

@@ -4,6 +4,7 @@ import controller.LectureController;
 import model.Lecture;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class LectureView {
@@ -85,5 +86,18 @@ public class LectureView {
 
         lectureController.deleteLecture(id);
         System.out.println("======= 삭제 완료 =======\n");
+    }
+
+    public void searchLectures() {
+        System.out.print("검색할 강의명을 입력해 주세요: ");
+        String title = in.nextLine();
+
+        List<Lecture> lectures = lectureController.searchLectures(title);
+
+        System.out.println("======= 강의 목록 =======");
+        for (int i=0; i<lectures.size(); i++) {
+            System.out.println((i+1) + lectures.get(i).toString());
+        }
+        System.out.println("======================\n");
     }
 }

@@ -15,26 +15,17 @@ public class Main {
             in.nextLine();
 
             switch (select) {
-                case 1:
-                    lectureView.createLecture();
-                    break;
-                case 2:
-                    lectureView.listAllLectures();
-                    break;
-                case 3:
-                    lectureView.updateLecture();
-                    break;
-                case 4:
-                    lectureView.deleteLecture();
-                    break;
-                case 5:
-                    break;
-                case 0:
+                case 1 -> lectureView.createLecture();
+                case 2 -> lectureView.listAllLectures();
+                case 3 -> lectureView.updateLecture();
+                case 4 -> lectureView.deleteLecture();
+                case 5 -> lectureView.searchLectures();
+                case 0 -> {
                     System.out.println("프로그램을 종료합니다.");
                     in.close();
                     return;
-                default:
-                    System.out.println("다시 입력해 주세요.");
+                }
+                default -> System.out.println("다시 입력해 주세요.");
             }
         }
     }
