@@ -51,7 +51,7 @@ public class LectureView {
         System.out.print("수정할 강의 번호를 선택해 주세요: ");
         int id = in.nextInt();
         in.nextLine();
-        while (!lectureController.isIndexExist(id)) {
+        while (lectureController.isIndexExist(id)) {
             System.out.println("잘못된 번호입니다. 다시 입력해 주세요!");
             System.out.print("번호: ");
             id = in.nextInt();
@@ -76,7 +76,7 @@ public class LectureView {
         System.out.print("삭제할 강의 번호를 선택해 주세요: ");
         int id = in.nextInt();
         in.nextLine();
-        while (!lectureController.isIndexExist(id)) {
+        while (lectureController.isIndexExist(id)) {
             System.out.println("잘못된 번호입니다. 다시 입력해 주세요!");
             System.out.print("번호: ");
             id = in.nextInt();

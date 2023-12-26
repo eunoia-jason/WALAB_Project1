@@ -5,14 +5,14 @@ import model.Lecture;
 import java.util.ArrayList;
 
 public class LectureController {
-    private final ArrayList<Lecture> lectures = new ArrayList<Lecture>();
+    private final ArrayList<Lecture> lectures = new ArrayList<>();
 
     public boolean isLectureExist(String title) {
         return lectures.stream().anyMatch(lecture -> lecture.getTitle().equals(title));
     }
 
     public boolean isIndexExist(int id) {
-        return 0 < id && id <= lectures.size();
+        return 0 >= id || id > lectures.size();
     }
 
     public void createLecture(String title, String lecturer, String tag, double stars) {
@@ -21,7 +21,7 @@ public class LectureController {
     }
 
     public ArrayList<Lecture> listAllLectures() {
-        return new ArrayList<Lecture>(lectures);
+        return new ArrayList<>(lectures);
     }
 
     public void updateLecture(int id, String title, String lecturer, String tag, double stars) {
