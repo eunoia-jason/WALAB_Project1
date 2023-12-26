@@ -13,6 +13,7 @@ public class Lecture {
     private double stars;
 
     @Override
+    // Object를 String으로 변환 시 출력할 문자열 정의
     public String toString() {
         return ". 제목: " + getTitle() + "  강사: " + getLecturer() + "  태그: " + getTag() + "  별점: " + getStars();
     }
