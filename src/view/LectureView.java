@@ -105,4 +105,15 @@ public class LectureView {
         }
         System.out.println("======================\n");
     }
+
+    // 별점순으로 검색
+    public void sortLectures() {
+        List<Lecture> lectures = lectureController.sortLectures();
+
+        System.out.println("======= 강의 목록 =======");
+        for (int i=0; i<lectures.size(); i++) {
+            System.out.println((i+1) + lectures.get(i).toString());
+        }
+        System.out.println("======================\n");
+    }
 }

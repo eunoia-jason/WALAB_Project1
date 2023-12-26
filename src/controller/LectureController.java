@@ -3,6 +3,7 @@ package controller;
 import model.Lecture;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class LectureController {
@@ -18,7 +19,7 @@ public class LectureController {
         return 0 >= id || id > lectures.size();
     }
 
-    // 입력받은 정보의 강의 생성
+    // 입력받은 정보 강의 생성
     public void createLecture(String title, String lecturer, String tag, double stars) {
         Lecture newLecture = new Lecture(title, lecturer, tag, stars);
         lectures.add(newLecture);
@@ -45,5 +46,10 @@ public class LectureController {
     // parameter의 강의명이 포함된 강의 검색
     public List<Lecture> searchLectures(String title) {
         return lectures.stream().filter(lecture -> lecture.getTitle().contains(title)).toList();
+    }
+
+    // 별점이 높은 순서대로 강의 검색
+    public List<Lecture> sortLectures() {
+        return lectures.stream().sorted(Comparator.comparing(Lecture::getStars).reversed()).toList();
     }
 }
