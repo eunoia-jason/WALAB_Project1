@@ -15,7 +15,7 @@
 
 ### 패키지
 - MVC 패턴을 사용하여 패키지를 구성했습니다.
-- model: 강의 데이터 Schema
+- model: 강의 데이터 Schema
 - view: 강의 관리 인터페이스
 - controller: 강의 관리 로직 구현
 
